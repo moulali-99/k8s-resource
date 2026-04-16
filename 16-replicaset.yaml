@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: nginx
-  ## this labels are replicaset labels
-  labels: 
+  # these labels are replicaset labels
+  labels:
     project: roboshop
     purpose: rs-demo
     tier: frontend
@@ -17,7 +17,7 @@ spec:
       purpose: rs-demo
       tier: frontend
       component: frontend
-  ## this pod defination, pod is subnet of replicaset
+  # This is pod definition, pod is subset of replicaset
   template:
     metadata:
       labels:
@@ -25,7 +25,7 @@ spec:
         purpose: rs-demo
         tier: frontend
         component: frontend
-    sepc:
+    spec:
       containers:
       - name: nginx
         image: nginx
